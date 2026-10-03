@@ -7,7 +7,6 @@ import calcTotal from "./calcularTotal.js";
 import desconto from "./aplicarDesconto.js";
 import sVenda from "./salvarVenda.js";
 import lerVenda from "./lerVenda.js";
-import fs from "node:fs"
 
 let indice = true
 
