@@ -1,5 +1,6 @@
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
+import sairSistema from "./sair.js";
 
 let indice = true
 
@@ -25,7 +26,7 @@ do{
 
         break
         case("0"):
-
+        indice = sairSistema(indice)
         break
         default:
             console.log("\nDigite uma opção válida;")
