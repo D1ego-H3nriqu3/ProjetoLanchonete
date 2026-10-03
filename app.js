@@ -4,6 +4,7 @@ import sairSistema from "./sair.js";
 import saudacao from "./criarSaudacao.js";
 import criarPedido from "./criarPedido.js";
 import calcTotal from "./calcularTotal.js";
+import desconto from "./aplicarDesconto.js";
 
 let indice = true
 
@@ -23,7 +24,7 @@ do{
         registrarP()
         break
         case("3"):
-
+        aplicarDescontoV()
         break
         case("4"):
 
@@ -60,4 +61,19 @@ do{
         let pedido = criarPedido(produto, preco, qtd)
         let total = calcTotal(pedido)
         console.log("Pedido:", pedido, "\nTotal: R$", total)
+    }
+
+    function aplicarDescontoV(){
+        let valor = Number(prompt("Digite o valor da compra: R$ "))
+        if(isNaN(valor) || valor <= 0){
+            console.log("\nDigite um valor válido!\n")
+            return aplicarDescontoV()
+        }
+        let percentual = Number(prompt("Digite o percentual de desconto: "))
+        if(isNaN(percentual) || percentual <= 0 || percentual >= 100){
+            console.log("\nDigite um percentual válido!\n")
+            return aplicarDescontoV()
+        }
+        let descontoV = desconto(valor, percentual)
+        console.log(`Valor com desconto: ${descontoV.toFixed(2)}`)
     }
