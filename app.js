@@ -5,6 +5,9 @@ import saudacao from "./criarSaudacao.js";
 import criarPedido from "./criarPedido.js";
 import calcTotal from "./calcularTotal.js";
 import desconto from "./aplicarDesconto.js";
+import sVenda from "./salvarVenda.js";
+import lerVenda from "./lerVenda.js";
+import fs from "node:fs"
 
 let indice = true
 
@@ -27,7 +30,7 @@ do{
         aplicarDescontoV()
         break
         case("4"):
-
+        console.log(lerVenda())
         break
         case("0"):
         indice = sairSistema(indice)
@@ -61,6 +64,7 @@ do{
         let pedido = criarPedido(produto, preco, qtd)
         let total = calcTotal(pedido)
         console.log("Pedido:", pedido, "\nTotal: R$", total)
+        sVenda(pedido)
     }
 
     function aplicarDescontoV(){
