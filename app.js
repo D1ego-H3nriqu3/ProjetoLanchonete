@@ -1,6 +1,7 @@
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
 import sairSistema from "./sair.js";
+import saudacao from "./criarSaudacao.js";
 
 let indice = true
 
@@ -14,7 +15,8 @@ do{
     let resposta = (prompt("Escolha uma opção: ")).trim()
     switch(resposta){
         case("1"):
-
+        let nome = (prompt("Digite seu nome: ")).trim()
+        console.log(saudacao(nome))
         break
         case("2"):
 
